@@ -3,13 +3,29 @@ version: '3.2'
 services:
   db:
     build: .
-    image: mcmoe/mssqldocker:v2017.CU12.1
+    image: mssqldocker:v2017.CU12.1
+    volumes:
+      - mssql-server-data:/var/opt/mssql
     environment:
       ACCEPT_EULA: Y
-      SA_PASSWORD: 2astazeY
-      MSSQL_DB: dev
-      MSSQL_USER: Kobeissi
-      MSSQL_PASSWORD: 7ellowEl7akey
+      SA_PASSWORD: Maverick782
+      MSSQL_DB: pensiunku
+      MSSQL_USER: root
+      MSSQL_PASSWORD: Maverick782
     ports:
       - "1433:1433"
-    container_name: mssqldev
+    deploy:
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.hostname == pensiuncore
+
+# networks:
+#   default:
+#     external:
+#       name: appnet
+
+volumes:
+  mssql-server-data:
+
