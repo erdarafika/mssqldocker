@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   db:
-    build: .
+    # build: .
     image: mssqldocker:v2017.CU12.1
     volumes:
       - mssql-server-data:/var/opt/mssql
@@ -21,10 +21,10 @@ services:
         constraints:
           - node.hostname == pensiuncore
 
-# networks:
-#   default:
-#     external:
-#       name: appnet
+networks:
+  default:
+    external:
+      name: appnet
 
 volumes:
   mssql-server-data:
