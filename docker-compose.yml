@@ -7,11 +7,11 @@ services:
     volumes:
       - mssql-server-data:/var/opt/mssql
     environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=Maverick782
-      - MSSQL_DB=pensiunku
-      - MSSQL_USER=root
-      - MSSQL_PASSWORD=Maverick782
+      -e 'ACCEPT_EULA=Y'
+      -e 'SA_PASSWORD=Maverick782'
+      -e 'MSSQL_DB=pensiunku'
+      -e 'MSSQL_USER=root'
+      -e 'MSSQL_PASSWORD=Maverick782'
     ports:
       - "1433:1433"
     deploy:
