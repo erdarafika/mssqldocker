@@ -8,7 +8,7 @@ services:
       - mssql-server-data:/var/opt/mssql
     environment:
       ACCEPT_EULA: "Y"
-      SA_PASSWORD: "Maverick782"
+      SA_PASSWORD: "saMaverick782"
       MSSQL_DB: "pensiunku"
       MSSQL_USER: "root"
       MSSQL_PASSWORD: "Maverick782"
