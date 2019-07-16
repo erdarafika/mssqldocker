@@ -13,7 +13,7 @@ services:
       - 'MSSQL_USER=root'
       - 'MSSQL_PASSWORD=Maverick782'
     ports:
-      - "1433:1433"
+      - "14330:1433"
     deploy:
       restart_policy:
         condition: on-failure
